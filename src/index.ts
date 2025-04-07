@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import sequelize from "./config/db";
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/user";
+import userInvitationRoutes from "./routes/invitation";
 import authMiddleware from "./middleware/auth";
 import { seedRoles } from "./seeders/roles";
 import { seedPersonTypes } from "./seeders/personTypes";
@@ -22,9 +23,10 @@ app.use(express.json());
 
 app.use("/auth", authRoutes);
 app.use("/users", authMiddleware, userRoutes);
+app.use("/user-invitations", authMiddleware, userInvitationRoutes);
 
 sequelize
-  .sync({ force: true })
+  .sync({ alter: true })
   .then(seedRoles)
   .then(seedPersonTypes)
   .then(() => {

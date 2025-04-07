@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken";
+
 import { AuthRequest } from "../types/AuthRequest";
 
 const httpContext = require("express-http-context");

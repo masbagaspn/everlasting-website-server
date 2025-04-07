@@ -195,7 +195,7 @@ Person.init(
 /* #endregion */
 
 /* #region Guest Model */
-class Guest extends Model {
+export class Guest extends Model {
   public id!: string;
   public fullName!: string;
   public phone?: string;
@@ -242,7 +242,7 @@ Guest.init(
 /* #endregion */
 
 /* #region Wish Model */
-class Wish extends Model {
+export class Wish extends Model {
   public id!: number;
   public wish!: string;
   public guestId!: string;
@@ -281,7 +281,7 @@ Wish.init(
 /* #endregion */
 
 /* #region Message Model */
-class Message extends Model {
+export class Message extends Model {
   public id!: number;
   public message!: string;
   public userInvitationId!: string;
@@ -313,7 +313,7 @@ Message.init(
 /* #endregion */
 
 /* #region Event Model */
-class Event extends Model {
+export class Event extends Model {
   public id!: number;
   public name!: string;
   public date!: string;
